@@ -1,0 +1,65 @@
+void setup()
+{
+  pinMode (8, OUTPUT ) ;
+  pinMode ( 4, OUTPUT );
+}
+void loop()
+{
+  
+    digitalWrite(4 ,HIGH);
+    delay (1000);
+    digitalWrite (4 , LOW );
+    delay (1000);
+    digitalWrite(8 ,HIGH);
+    delay (1000);
+    digitalWrite (8 , LOW );
+    delay (1000);
+}
+// trafic light :
+int red = 9;
+int Blue = 8;
+int green = 7;
+
+
+void setup()
+{
+    pinMode(red, OUTPUT);
+    pinMode(Blue, OUTPUT);
+    pinMode(green, OUTPUT);
+}
+void loop()
+{
+    changeLights();
+  	delay(1000);
+}
+void changeLights() 
+{
+  int counter = 0;
+  if(counter < 100 )
+  {
+    digitalWrite(red, HIGH);
+    digitalWrite(Blue, LOW);
+    digitalWrite(green, LOW);
+    delay(1000);
+  }
+  if(100 < counter < 200 )
+  {
+    digitalWrite(Blue, HIGH);
+    digitalWrite(red, LOW);
+    digitalWrite(green, LOW);
+    delay(1000);
+  }
+  if(counter > 200 );
+  {
+    digitalWrite(green, HIGH);
+    digitalWrite(red, LOW);
+    digitalWrite(Blue, LOW);
+    delay(1000);
+  }
+ /* counter = counter + 1;
+  if (counter >300 )
+  {
+    counter = 0 ;
+  }*/
+
+}
