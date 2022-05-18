@@ -1,0 +1,17 @@
+#define IR 2
+ int detection = HIGH ; // no obstacle
+ void s e t u p ( )
+ { 
+Serial.begin ( 9 6 0 0 ) ; 
+pin Mode (IR, INPUT ) 
+; }
+void loop ( )
+ { 
+detection = digital Read (IR ) ; 
+if(detection == LOW)
+{
+ Serial.print("There is an obstacle!\ n " ) ;
+ }else { Serial.print ( " N o obstacle!\ n " ) ;
+ }
+delay ( 500 ) ; // in m s
+}
