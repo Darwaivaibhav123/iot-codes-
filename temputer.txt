@@ -1,0 +1,43 @@
+int baselinetemp=0;
+int celsius =0;
+int fahrenheit=0;
+int mintemp = 10000;
+int maxtemp = 0;
+int time ;
+void setup()
+{
+  
+  pinMode(A0 ,INPUT);
+  Serial.begin(9600);
+}
+void loop()
+{
+  baselinetemp= 40;
+  celsius = map(((analogRead(A0)-20)*3.04),0,1023,-40,125);
+  fahrenheit=((celsius*9)/5+32);
+  Serial.print("current temp:");
+  Serial.print (celsius);
+  Serial.print("C ,");
+  Serial.print(fahrenheit);
+  Serial.println(" F");
+  delay(1000);
+  
+  if(fahrenheit > maxtemp)
+  {
+    maxtemp = fahrenheit;
+  }
+  if (fahrenheit < mintemp)
+  {
+    mintemp = fahrenheit;
+  }
+  Serial.print("max Temperatur : ");
+  Serial.print(maxtemp);
+  Serial.print("F ,");
+  Serial.print("min tempertur :");
+  Serial.print(mintemp);
+  Serial.print(" F");
+  Serial.println();
+  delay(2000);
+}
+               
+
