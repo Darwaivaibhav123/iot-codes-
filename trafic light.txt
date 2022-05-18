@@ -1,0 +1,49 @@
+int red = 13;
+int yellow = 12;
+int blue = 11;
+int green = 10;
+char colourBlink;
+int temp ;
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(red, OUTPUT);
+  pinMode(yellow, OUTPUT);
+  pinMode(blue, OUTPUT);
+  pinMode(green, OUTPUT);
+}
+
+void loop()
+{
+  Serial.println("enter which colour you want to glow\n1.press r for red\n2.press'y'for   \n3.press'g' for green \n4. press 'b'for blue");
+  while(Serial.available()==0){}
+  colourBlink = Serial.read() ;
+  if (colourBlink == 'r'){
+    digitalWrite(temp ,LOW );
+    digitalWrite(red , HIGH);
+    temp=red ;
+  }
+  else if(colourBlink =='y'||colourBlink=='Y'){
+    digitalWrite(temp ,LOW );
+    digitalWrite(yellow , HIGH);
+    temp=yellow ;
+  }
+  else if (colourBlink =='b'||colourBlink=='B'){
+    digitalWrite(temp ,LOW );
+    digitalWrite(blue , HIGH);
+    temp=blue ;
+  }
+  else if (colourBlink =='g'||colourBlink=='G'){
+    digitalWrite(temp ,LOW );
+    digitalWrite(green , HIGH);
+    temp=green ;
+  }
+   else{
+     Serial.println("your entered wrong value");
+   }
+}
+                   
+                   
+                   
+                   
+               
